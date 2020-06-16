@@ -1,0 +1,39 @@
+<p>recipe-detail works!</p>
+<div class="row">
+  <div class="cold-xs-12">
+        <img [src]="recipe.imgpath" alt="{{recipe.name}}" class="img-responsive" style="max-height: 200px;">
+  </div>
+</div>
+<div class="row">
+  <div class="cold-xs-12">
+       <h1>{{ recipe.name }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="cold-xs-12">
+        <div class="btn-group" appDropDown >
+          <button type="button" class="btn btn-primary dropdown-toggle"  >
+            Manage Recipe
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" >
+          <li (click)="addToShopList()"><a style="cursor: pointer;">Add Ingredients to shopping list</a></li>
+          <li><a  style="cursor: pointer;" (click)="onEdit()">Edit</a></li>
+          <li><a  style="cursor: pointer;" (click)="onDelete()">Delete</a></li>
+        </ul>
+      </div>
+  </div>
+</div>
+<div class="row">
+  <div class="cold-xs-12">
+     {{recipe.description}}
+  </div>
+</div>
+<div class="row">
+  <div class="cold-xs-12">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let ingres of recipe.ingrediant">
+           {{ ingres.name }} - {{ingres.amount}}
+        </li>
+      </ul>  </div>
+</div>
